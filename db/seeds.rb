@@ -1,7 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+todos = Todo.create(
+    [
+        {
+            title: "Walk the dog",
+            duedate: DateTime.new(2020, 12, 28),
+            description: "Bring Lucky out for a walk",
+            completed: false
+        },
+        {
+            title: "Complete CVWO mid-assignment submission",
+            duedate: DateTime.new(2020, 12, 30),
+            description: "Push to github repo",
+            completed: false
+        },
+        {
+            title: "Hit the gym",
+            duedate: DateTime.new(2020, 12, 27),
+            description: "Chest day",
+            completed: false
+        }
+    ]
+)
+
