@@ -10,7 +10,11 @@ module Api::V1
         render json: @todo
       end
 
-      
+      def update
+        @todo = Todo.find(params[:id])
+        @todo.update_attributes(todo_params)
+        render json: @todo
+      end
 
       def destroy
         @todo = Todo.find(params[:id])
