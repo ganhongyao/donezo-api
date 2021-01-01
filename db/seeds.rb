@@ -21,3 +21,16 @@ todos = Todo.create(
     ]
 )
 
+tags = Tag.create(
+    [
+        {
+            name: "Fitness"
+        },
+        {
+            name: "School"
+        },
+        {
+            name: "Errands"
+        }
+    ]
+)
