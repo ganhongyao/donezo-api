@@ -28,7 +28,7 @@ module Api::V1
       private 
       
         def todo_params
-            params.require(:todo).permit(:title, :duedate, :description, :completed)
+            params.require(:todo).permit(:title, :duedate, :description, :completed, :tags_list => [])
         end
     end
   end

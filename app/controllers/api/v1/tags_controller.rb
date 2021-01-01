@@ -28,7 +28,7 @@ module Api::V1
       private 
       
         def tag_params
-            params.require(:tag).permit(:name,)
+            params.require(:tag).permit(:name)
         end
     end
   end
