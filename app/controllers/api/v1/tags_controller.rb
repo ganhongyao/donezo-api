@@ -6,13 +6,13 @@ module Api::V1
       end
 
       def create
-        @tag = Tags.create(todo_params)
+        @tag = Tag.create(tag_params)
         render json: @tag
       end
 
       def update
         @tag = Tag.find(params[:id])
-        @tag.update_attributes(tag)
+        @tag.update_attributes(tag_params)
         render json: @tag
       end
 
