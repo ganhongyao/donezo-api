@@ -1,7 +1,8 @@
 module Api::V1
     class TodosController < ApplicationController
+      skip_before_action :verify_authenticity_token
       def index
-        @todos = Todo.order("created_at DESC")
+        @todos = Todo.where(:user_id => params[:user_id]).order("created_at DESC")
         render json: @todos
       end
 
@@ -26,9 +27,9 @@ module Api::V1
       end
 
       private 
-      
+        
         def todo_params
-            params.require(:todo).permit(:title, :duedate, :description, :completed, :tags_list => [])
+            params.require(:todo).permit(:title, :duedate, :description, :completed, :user_id, :tags_list => [])
         end
     end
   end
