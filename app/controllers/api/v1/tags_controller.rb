@@ -1,7 +1,7 @@
 module Api::V1
     class TagsController < ApplicationController
       def index
-        @tags = Tag.order("created_at DESC")
+        @tags = Tag.where(:user_id => params[:user_id]).order("created_at DESC")
         render json: @tags
       end
 
@@ -28,7 +28,7 @@ module Api::V1
       private 
       
         def tag_params
-            params.require(:tag).permit(:name)
+            params.require(:tag).permit(:name, :user_id)
         end
     end
   end
