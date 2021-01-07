@@ -2,7 +2,7 @@ module Api::V1
     class TodosController < ApplicationController
       skip_before_action :verify_authenticity_token
       def index
-        @todos = Todo.where(:user_id => params[:user_id]).order("created_at DESC")
+        @todos = Todo.where(:user_id => params[:user_id]).order("duedate ASC")
         render json: @todos
       end
 
