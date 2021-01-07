@@ -9,7 +9,7 @@ class Api::V1::TokensController < ApplicationController
             jwt: encode_token({id:user.id, email: user.email})
           }
         else
-          render json: {errors: "Invalid email or password"}, status: :unprocessable_entity
+          render json: {errors: "Invalid email or password. Please try again."}, status: :unprocessable_entity
       end
     end
 
